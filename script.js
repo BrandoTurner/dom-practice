@@ -7,7 +7,7 @@ let quotes = [
   `It don't matter if you win by an inch or a mile. Winning's winning.`,
 ];
 
-window.onload =  function(event) {
+window.onload = function(event) {
   
   // Random quote of the day generator
   const randomQuote = function() {
@@ -21,15 +21,83 @@ window.onload =  function(event) {
 
   // Part 1
 
+  function changeMainTitle(){
+    let title = document.getElementById("main-title")
+    title.innerHTML = "Welcome to my homepage"
+  }
+
+  changeMainTitle()
+
   // Part 2
+
+  function changeBodyBackground(){
+    document.body.style.background = "navy";
+  }
+  changeBodyBackground();
+
 
   // Part 3
 
+function removeFavorite(){
+  let lastItem = document.getElementsById("favorite-things").lastElementChild;
+  lastItem.remove();
+}
+removeFavorite();
+  
+
   // Part 4
+
+function changeTitle(){
+    let specialTitle = document.getElementsByClassName("special-title");
+
+    for(let i = 0; i < specialTitle.length; i++){
+      specialTitle[i].style.fontSize = "2rem";
+      
+    }
+  }
+  changeTitle();
 
   // Part 5
 
+  function removePastRace() {
+    let pastRace = document.getElementById("past-races").children[3];
+    pastRace.remove();
+    
+  }
+
+  removePastRace();
+    
+
+  
   // Part 6
 
+  function addPastRace(){
+      let item = document.createElement("li");
+      let nyc = document.createTextNode("New York");
+      item.appendChild(nyc)
+      document.getElementById("past-races").appendChild(item)
+  }
+  
+  addPastRace();
+
   // Part 7
+
+  function newPost(){
+
+    let div = document.createElement('div');
+    let header = document.createElement('h1');
+    let para = document.createElement('p');
+
+    header.textContent = "New York City";
+    para.textContent = "I drove through Grand Central subway!";
+    div.className = "blog-post purple";
+    div.appendChild(header);
+    div.appendChild(para);
+
+    let main = document.getElementsByClassName('main')[0];
+    main.appendChild(div);
+
+  }
+
+  newPost();
 }

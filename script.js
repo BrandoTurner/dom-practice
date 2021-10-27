@@ -22,8 +22,8 @@ window.onload = function(event) {
   // Part 1
 
   function changeMainTitle(){
-    let title = document.getElementById("main-title")
-    title.innerHTML = "Welcome to my homepage"
+    let title = document.getElementById('main-title')
+    title.innerHTML = "Welcome to DOM's homepage"
   }
 
   changeMainTitle()
@@ -39,8 +39,7 @@ window.onload = function(event) {
   // Part 3
 
 function removeFavorite(){
-  let lastItem = document.getElementsById("favorite-things").lastElementChild;
-  lastItem.remove();
+  document.querySelector('li:last-child').remove('li:last-child')
 }
 removeFavorite();
   
@@ -48,10 +47,10 @@ removeFavorite();
   // Part 4
 
 function changeTitle(){
-    let specialTitle = document.getElementsByClassName("special-title");
+    let specialTitle = document.getElementsByClassName('special-title');
 
     for(let i = 0; i < specialTitle.length; i++){
-      specialTitle[i].style.fontSize = "2rem";
+      specialTitle[i].style.fontSize = '2rem';
       
     }
   }
@@ -60,7 +59,7 @@ function changeTitle(){
   // Part 5
 
   function removePastRace() {
-    let pastRace = document.getElementById("past-races").children[3];
+    let pastRace = document.getElementById('past-races').children[3];
     pastRace.remove();
     
   }
@@ -72,10 +71,10 @@ function changeTitle(){
   // Part 6
 
   function addPastRace(){
-      let item = document.createElement("li");
-      let nyc = document.createTextNode("New York");
+      let item = document.createElement('li');
+      let nyc = document.createTextNode('New York');
       item.appendChild(nyc)
-      document.getElementById("past-races").appendChild(item)
+      document.getElementById('past-races').appendChild(item)
   }
   
   addPastRace();
@@ -88,13 +87,13 @@ function changeTitle(){
     let header = document.createElement('h1');
     let para = document.createElement('p');
 
-    header.textContent = "New York City";
-    para.textContent = "I drove through Grand Central subway!";
-    div.className = "blog-post purple";
+    header.textContent = 'New York City';
+    para.textContent = 'I DROVE THROUGH THE GRAND CENTRAL SUBWAY STATION';
+    div.className = 'blog-post purple';
     div.appendChild(header);
     div.appendChild(para);
 
-    let main = document.getElementsByClassName('main')[0];
+    let main = document.querySelector('.main')
     main.appendChild(div);
 
   }
